@@ -5,3 +5,4 @@ To Do list for practice GitHub commands and git:
 4. Eat,
 5. Drink Coffee,
 6. Do not sleep for next 48 hours
+7. Complete your work
