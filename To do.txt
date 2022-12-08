@@ -5,4 +5,8 @@ To Do list for practice GitHub commands and git:
 4. Eat,
 5. Drink Coffee,
 6. Do not sleep for next 48 hours
-7. Complete your work
+7. Complete your code at work
+8. Attend the meeting at the Habibi club,
+9. Complete the previous projects,
+10. learn to make WebAPI using asp.net and C#
+11. Make an awesome UI in React
