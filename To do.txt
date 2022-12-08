@@ -10,3 +10,4 @@ To Do list for practice GitHub commands and git:
 9. Complete the previous projects,
 10. learn to make WebAPI using asp.net and C#
 11. Make an awesome UI in React
+12. Try learning new skill
