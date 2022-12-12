@@ -10,24 +10,14 @@
         .container {
             width: 100%;
             height: 75vh;
+        }
+        .login, body, .container {
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        }
-        .login {
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        }
-
-        .name {
-            cursor: pointer;
-            text-shadow: .3rem .2rem rgb(187, 178, 178);
-        }
-
-        .name:hover {
-            animation: 0.7s floating ease-in-out;
         }
 
         #card {
-            box-shadow: 4px 7px rgb(187, 178, 178);
-            width: 50%;
+            box-shadow: 4px 7px 8px rgb(187, 178, 178);
+            width: 40%;
         }
 
         .loginBtn:hover {
@@ -36,33 +26,22 @@
         .foot {
             text-align: right;
         }
-
+        .name {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
         .mar {
             margin-right: 10rem;
         }
-
-        @keyframes floating {
-            0% {
-                transform: translateY(0rem);
-            }
-
-            50% {
-                transform: translateY(-0.5rem);
-                text-shadow: -0.4rem 0.4rem rgb(239, 178, 66);
-            }
-
-            100% {
-                transform: translateY(-0rem);
-            }
-        }
-
         @media (max-width: 800px) {
-            .name {
-                text-shadow: -3px 3px rgb(187, 178, 178);
-            }
-
             #card {
                 width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }
+            .name {
+                text-align: center;
             }
         }
     </style>
@@ -72,8 +51,9 @@
 </head>
 
 <body>
-    <div class="m-5">
-        <h1><strong class="name">JETLINETRAVEL</strong> <br> BACKOFFICE</h1>
+    <div class="pt-2 m-5 justify-content-center name" >
+        <h2>JETLINETRAVEL </h2>
+        <h4 class="px-4 mx-2"> BACKOFFICE</h4> 
     </div>
     <!-- toast div  -->
     <div class="toast" style="position: absolute; top: 0; right: 0;" aria-live="polite" aria-atomic="true"
@@ -94,22 +74,30 @@
     <div class="container">
         <div class="card p-5 m-auto" id="card">
             <!-- login form -->
-            <div class="m-3 log text-center"><h2>Login</h2></div>
+            <div class="m-3 log text-center"><h2><i class="fas fa-user-circle"></i>  Login </h2></div>
             <div class="input-group mb-4">
                 <span class="input-group-text fas fa-user" id="basic-addon1"></span>
                 <input type="text" class="form-control" placeholder="Username" id="user" aria-label="Username"
                     aria-describedby="basic-addon1">
             </div>
-            <div class="input-group mb-3">
+            <div class="input-group mb-4">
                 <span class="input-group-text fas fa-lock" id="basic-addon1"></span>
                 <input type="password" class="form-control" placeholder="Password" id="pass" aria-label="password"
                     aria-describedby="basic-addon1">
             </div>
-            <button type="submit" class="btn btn-primary mt-3 w-50 loginBtn" onclick="toasting()">Login</button>
+            <div class="row gy-2">
+                <div class="col-sm-8">
+                    <button type="submit" class="btn btn-primary w-75 loginBtn " onclick="toasting()">Login</button>
+                </div>
+                <div class="col-sm-4">
+                    <button class="btn btn-primary w-75" onclick="cleaning()">Clear</button>
+                </div>
+            </div>
+            
 
         </div>
     </div>
-    <div class="text-align-right foot">
+    <div class="text-align-right foot m-2 px-2">
         &#169; Zikomo Solutions Inc. 2022, All Rights Reserved. Developed by <a
             href="http://zikomosolutions.com/">Zikomo Solutions Inc.</a>
     </div>
@@ -142,6 +130,10 @@
                 window.open()
                 return true;
             }
+        }
+        function cleaning() {
+            document.getElementById('user').value = "";
+            document.getElementById('pass').value = "";
         }
     </script>
 </body>
