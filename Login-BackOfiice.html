@@ -9,15 +9,12 @@
     <style>
         .container {
             width: 100%;
-            height: 75vh;
+            height: 70vh;
         }
-        .login, body, .container {
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        }
-
         #card {
             box-shadow: 4px 7px 8px rgb(187, 178, 178);
             width: 40%;
+            
         }
 
         .loginBtn:hover {
@@ -28,23 +25,31 @@
         }
         .name {
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            color: rgb(98, 96, 96);
         }
         .mar {
             margin-right: 10rem;
         }
+        .footer {
+            padding-top: 4rem;
+        }
         @media (max-width: 800px) {
             #card {
                 width: 100%;
-                display: flex;
-                justify-content: center;
-                flex-direction: column;
                 align-items: center;
             }
             .name {
                 text-align: center;
             }
-            .btn-primary {
-                width: 10rem;
+        }
+        @media (max-width: 1000px) {
+            #card {
+                width: 75%;
+            }
+        }
+        @media (max-width: 300px) {
+            #card {
+                width: 100%;
             }
         }
     </style>
@@ -54,8 +59,8 @@
 </head>
 
 <body>
-    <div class="pt-2 m-5 justify-content-center name" >
-        <h2>JETLINETRAVEL </h2>
+    <div class="pt-2 m-4 justify-content-center name" >
+        <h2 class="headName">JETLINETRAVEL </h2>
         <h4 class="px-4 mx-3"> BACKOFFICE</h4> 
     </div>
     <!-- toast div  -->
@@ -74,36 +79,35 @@
         </div>
     </div>
 
-    <div class="container">
+    <div class="container d-flex justify-content-center">
         <div class="card p-5 m-auto" id="card">
             <!-- login form -->
-            <div class="m-3 log text-center"><h2><i class="fas fa-user-circle"></i>  Login </h2></div>
-            <div class="input-group mb-4">
-                <span class="input-group-text fas fa-user" id="basic-addon1"></span>
-                <input type="text" class="form-control" placeholder="Username" id="user" aria-label="Username"
-                    aria-describedby="basic-addon1">
-            </div>
-            <div class="input-group mb-4">
-                <span class="input-group-text fas fa-lock" id="basic-addon1"></span>
-                <input type="password" class="form-control" placeholder="Password" id="pass" aria-label="password"
-                    aria-describedby="basic-addon1">
-            </div>
-            <div class="row gy-2">
-                <div class="col-sm-8">
-                    <button type="submit" class="btn btn-primary w-75 loginBtn " onclick="toasting()">Login</button>
-                </div>
-                <div class="col-sm-4">
-                    <button class="btn btn-primary w-75" onclick="cleaning()">Clear</button>
-                </div>
-            </div>
-            
+            <form onsubmit="return toasting()" action=" ">
 
+                <div class="m-3 mb-5 log text-center"><h2><i class="fas fa-user-circle"></i>  Login </h2></div>
+                <div class="input-group mb-4" >
+                    <span class="input-group-text fas fa-user" id="basic-addon1"></span>
+                    <input type="text" class="form-control" placeholder="Username" id="user" aria-label="Username"
+                    aria-describedby="basic-addon1" >
+                </div>
+                <div class="input-group mb-4">
+                    <span class="input-group-text fas fa-lock" id="basic-addon1"></span>
+                    <input type="password" class="form-control" placeholder="Password" id="pass" aria-label="password"
+                    aria-describedby="basic-addon1 ">
+                </div>
+                <div class="d-flex">
+                        <button type="submit" class="btn m-1 btn-primary w-75 loginBtn " onclick="toasting()">Login</button>
+                        <button class="btn btn-primary w-75 m-1" onclick="cleaning()">Clear</button>
+                </div>
+            </form>
         </div>
+        <!-- footer -->
     </div>
-    <div class="text-align-right foot m-2 px-2">
-        &#169; Zikomo Solutions Inc. 2022, All Rights Reserved. Developed by <a
-            href="http://zikomosolutions.com/">Zikomo Solutions Inc.</a>
-    </div>
+        <div class="text-align-right d-flex justify-content-between m-2 mt-5 px-2 footer">
+            <div class="text-left">&#169; Zikomo Solutions Inc. 2022 All Rights Reserved</div>
+            <div class="foot">Developed by <a
+                href="http://zikomosolutions.com/">Zikomo Solutions Inc.</a></div>
+            </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -118,19 +122,20 @@
     <script>
         let option = {
             animation: true,
-            delay: 2000
+            delay: 3000
         }
         function toasting() {
             let input1 = document.getElementById('user').value;
             let input2 = document.getElementById('pass').value;
-            if (input1 <= 0 || input2 <= 0) {
+            if (input1 <= 0 || input2 <= 0 || input1 != "jeel" && input2 != 123) {
                 let myAlert = document.querySelector(".toast");
                 let bsAlert = new bootstrap.Toast(myAlert, option)
                 bsAlert.show();
                 return false;
             }
             else {
-                window.open()
+                // window.open()
+                alert("Welcom jeel")
                 return true;
             }
         }
